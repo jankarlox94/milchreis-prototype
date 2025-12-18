@@ -1,10 +1,11 @@
 import React from "react";
 import Personaje from "../../assets/Personaje.png";
-// import Personaje2 from "../../assets/logo-mascot-2.png";
-import Personaje2 from "../../assets/mascot-1.png";
+import Personaje2 from "../../assets/mascot-1-gris.png";
+// import Personaje2 from "../../assets/mascot-1.png";
 import Logo from "../../assets/Logo.png";
 // import Logo2 from "../../assets/Logo2.png";
-import Logo2 from "../../assets/mascot-2-name.png";
+// import Logo2 from "../../assets/mascot-2-name-white.png";
+import Logo2 from "../../assets/mascot-2-name-gris.png";
 import Logo3 from "../../assets/hero-image-2.png";
 
 import { motion } from "framer-motion";
@@ -15,7 +16,7 @@ const Hero = () => {
         <section className="flex justify-center mt-36 md:mt-20">
             <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* descripciones */}
-                <div className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36">
+                <div className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36 w-[100%]">
                     <div className="card">
                         <motion.img
                         variants={slideUp(0.2)}
@@ -61,7 +62,7 @@ const Hero = () => {
                     variants={slideInFromSide("right", 0.5)}
                     initial="initial"
                     animate="animate"
-                    className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36"
+                    className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36 mascot-rice-pudding"
                 >
                     <img src={Personaje2} alt="Personaje de juego" />
                 </motion.div>
