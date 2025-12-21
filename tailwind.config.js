@@ -11,7 +11,12 @@ export default {
       },
       fontFamily: {
         miFuenteRubik: ["Rubik", "sans-serif"]
-      }
+      },
+      screens: {
+        '3xl': '1600px', // Adds a '3xl:' utility prefix
+        '5xl': '2560px'
+      },
+
     },
   },
   plugins: [],
