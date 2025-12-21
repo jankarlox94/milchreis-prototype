@@ -1,7 +1,7 @@
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Fondo from "./assets/Fondo.png";
-import Fondo2 from "./assets/fondo-3.png";
+import Fondo2 from "./assets/fondo-non-invasive.png";
 
 function App() {
     const bgImagen = {

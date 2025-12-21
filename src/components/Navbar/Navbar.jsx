@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../../assets/Logo.png";
 // import Logo2 from "../../assets/Logo2.png";
 // import Logo2 from "../../assets/mascot-2-name-white.png";
-import Logo2 from "../../assets/mascot-2-name.png";
+import Logo2 from "../../assets/mascot-2-name-white-2.png";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +50,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed top-0  left-0 w-full  bg-custom-navbar bg-custom-navbar-900 bg-opacity-30 backdrop-blur-md z-50 transition-all duration-300">
+        <nav className="fixed top-0  left-0 w-full  bg-custom-navbar bg-custom-navbar-900 bg-opacity-60 backdrop-blur-md z-50 transition-all duration-300">
             <div className="flex justify-between items-center sm:px-12 sm:py-6 px-4 py-3">
                 {/* Logo */}
                 <div className="flex items-center">

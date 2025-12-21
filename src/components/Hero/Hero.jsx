@@ -1,11 +1,11 @@
 import React from "react";
 import Personaje from "../../assets/Personaje.png";
-import Personaje2 from "../../assets/mascot-1.png";
+import Personaje2 from "../../assets/mascot-marron.png";
 // import Personaje2 from "../../assets/mascot-1.png";
 import Logo from "../../assets/Logo.png";
 // import Logo2 from "../../assets/Logo2.png";
 // import Logo2 from "../../assets/mascot-2-name-white.png";
-import Logo2 from "../../assets/mascot-2-name.png";
+import Logo2 from "../../assets/mascot-2-name-white-2.png";
 import Logo3 from "../../assets/hero-image-2.png";
 
 import { motion } from "framer-motion";
