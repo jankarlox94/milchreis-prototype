@@ -13,24 +13,27 @@ import { slideUp, slideInFromSide } from "../../utility/animation";
 
 const Hero = () => {
     return (
-        <section className="flex justify-center mt-36  ">
+        <section className="flex justify-center xl:mt-[120px] 2xl:mt-36  ">
             <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* descripciones */}
-                <div className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36 xl:pt-40 xl:text-[25px]">
+                <div className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36 ">
                     <div className="card xl:max-w-[800px] ">
-                        <motion.img
-                        variants={slideUp(0.2)}
-                        initial="initial"
-                        animate="animate"
-                        src={Logo2}
-                        alt="logo del Juego"
-                        className="flex justify-center"
-                    />
+                        <div className="flex h-full justify-center ">
+                            <motion.img
+                            variants={slideUp(0.2)}
+                            initial="initial"
+                            animate="animate"
+                            src={Logo2}
+                            alt="logo del Juego"
+                            className="m-auto"
+                            />
+                        </div>
+                        
                     <motion.p
                         variants={slideUp(0.3)}
                         initial="initial"
                         animate="animate"
-                        className="py-12 text-white"
+                        className="py-12 text-white xl:text-sm 2xl:text-xl"
                     >
                        From a rare 17th-century European recipe, we bring the Old World delicacy of Milchreis 
                        to the American heartland. Crafted by hardworking Oklahoma moms, our pudding uses only fresh,
@@ -63,7 +66,7 @@ const Hero = () => {
                     variants={slideInFromSide("right", 0.5)}
                     initial="initial"
                     animate="animate"
-                    className="p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36 "
+                    className="p-10 sm:p-10 md:p-15 lg:p-30 xl:max-w-[500px] 2xl:max-w-[700px]"
                 >
                     <img src={Personaje2} alt="Personaje de juego" />
                 </motion.div>

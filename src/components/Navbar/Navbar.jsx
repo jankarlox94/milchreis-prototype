@@ -93,7 +93,7 @@ const Navbar = () => {
                             <li key={link.id}>
                                 <a
                                     href={link.link}
-                                    className="sm:text-lg text-sm text-white hover:text-sky-100 transition-transform duration-300 transform hover:scale-110 inline-block"
+                                    className="sm:text-lg text-sm text-white hover:text-sky-100 transition-transform duration-300 transform hover:scale-110 inline-block xl:text-sm 2xl:text-lg"
                                 >
                                     {link.title}
                                 </a>
