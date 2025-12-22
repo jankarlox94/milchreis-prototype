@@ -6,29 +6,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Optional: Set default background and text color for the whole app */
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: #C88147;
+    @apply bg-cream text-dark-green font-sans;
 }
 
-
-.septimo{
-background-color: #C88147;
-}
-
-/* CardComponent.module.css */
-.card {
-  /* Use RGBA or Hex with Alpha */
-  background-color: #C88147; /* Red with 30% opacity */
-  opacity: 90%;
-  /* Or use Hex with 8 digits: #FF00004D */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-    
-
-.mascot-rice-pudding{
-    /* max-height: 90% !important; */
+/* Custom utility class for the terracotta buttons */
+@layer components {
+    .btn-terracotta {
+        @apply inline-flex items-center gap-2 bg-terracotta text-cream px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300;
+    }
 }
