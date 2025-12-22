@@ -18,15 +18,16 @@ function App() {
         
             className="flex justify-center overflow-hidden min-h-screen"
         >
-                <div className="min-h-screen flex flex-col">
+                <div className="min-h-screen w-full  flex flex-col">
                 <header>
                     <Navbar />
                 </header>
-                <main className="flex-grow">
+                <main className="flex-grow ">
                     <HeroSection />
                     <UspBanner />
-                    <ComparisonSection />
                     <ProductCtaSection />
+                    <ComparisonSection />
+                   
                 </main>
                 {/* Simple footer for completeness */}
                 <footer className="py-8 text-center text-dark-green/60 text-sm">

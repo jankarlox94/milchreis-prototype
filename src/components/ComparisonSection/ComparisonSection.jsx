@@ -21,8 +21,12 @@ const ComparisonSection = () => {
   return (
     <section className="py-20 px-6 md:px-12 max-w-container-desktop mx-auto">
       <h2 className="text-center font-serif font-bold text-3xl md:text-4xl mb-12 text-dark-green">
-        The Why: Then vs. Now
+       Defiantly Natural. Honestly Delicious.
+      
+        
       </h2>
+       <h2 className="text-center font-serif font-bold text-3xl md:text-4xl mb-12 text-dark-green">The Why: Then vs. Now</h2> 
+      <h3 className="text-center font-serif font-bold text-xl md:text-xl mb-12 text-dark-green">"We believe in selling only the desserts we personally love and trust. Our strict commitment to natural ingredients is our way of reclaiming the essence of real food—returning to quality that has been lost in the age of mass production."</h3>
       
       <div className="flex flex-col md:flex-row gap-12 lg:gap-20">
         <ComparisonBlock 

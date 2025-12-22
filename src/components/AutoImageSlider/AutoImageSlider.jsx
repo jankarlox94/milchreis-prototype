@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const AutoImageSlider = ({ images, interval = 3000 }) => {
+const AutoImageSlider = ({ images, interval = 4000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Function to move to the next slide
