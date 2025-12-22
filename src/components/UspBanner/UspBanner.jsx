@@ -13,7 +13,7 @@ const UspBanner = () => {
   return (
     <section className="bg-peach-beige py-8 px-6">
       <div className="max-w-container-desktop mx-auto flex flex-col md:flex-row flex-wrap justify-around items-center gap-6 md:gap-12 text-dark-green">
-        <UspItem iconClass="bi-leaf" text="Natural Ingredients" />
+        <UspItem iconClass="bi-balloon-heart" text="Natural Ingredients" />
         <UspItem iconClass="bi-hourglass-split" text="Slow-Cooked for Hours" />
         <UspItem iconClass="bi-box-seam" text="Made On-Demand" />
       </div>
