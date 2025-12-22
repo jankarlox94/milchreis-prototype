@@ -1,82 +1,49 @@
-import React from "react";
-import Personaje from "../../assets/Personaje.png";
-import Personaje2 from "../../assets/mascot-marron.png";
-// import Personaje2 from "../../assets/mascot-1.png";
-import Logo from "../../assets/Logo.png";
-// import Logo2 from "../../assets/Logo2.png";
-// import Logo2 from "../../assets/mascot-2-name-white.png";
-import Logo2 from "../../assets/mascot-2-name-white-2.png";
-import Logo3 from "../../assets/hero-image-2.png";
-
+import React from 'react';
+import BowlOne from "../../assets/rice-pudding-bowl.png";
 import { motion } from "framer-motion";
 import { slideUp, slideInFromSide } from "../../utility/animation";
 
-const Hero = () => {
-    return (
-        <section className="flex justify-center mt-[114px]">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-                {/* descripciones */}
-                <div className="flex h-full p-10 sm:p-10 md:p-15 lg:p-30 xl:p-36 ">
-                    <div className="m-auto card xl:max-w-[800px] ">
-                        <div className="flex h-full justify-center ">
-                            <motion.img
-                            variants={slideUp(0.2)}
+
+
+const HeroSection = () => {
+  // Using a high-quality Unsplash image of caramel pudding
+  const heroImage = "https://images.unsplash.com/photo-1550104289-6557645f754d?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
+  return (
+    <section className="relative w-full min-h-[600px] grid grid-cols-1 lg:grid-cols-2 items-center ">
+      {/* Left Text Content */}
+      <motion.div variants={slideUp(0.2)}
                             initial="initial"
-                            animate="animate"
-                            src={Logo2}
-                            alt="logo del Juego"
-                            className="m-auto"
-                            />
-                        </div>
-                        
-                        <motion.p
-                            variants={slideUp(0.3)}
-                            initial="initial"
-                            animate="animate"
-                            className="py-12 text-white xl:text-sm 2xl:text-xl"
-                        >
-                        From a rare 17th-century European recipe, we bring the Old World delicacy of Milchreis 
-                        to the American heartland. Crafted by hardworking Oklahoma moms, our pudding uses only fresh,
-                        local milk and wholesome farm ingredients. We skip the shortcuts—no artificial flavors or preservatives—to deliver timeless comfort and honest, premium quality in every spoon.
-                        </motion.p>
-                        <motion.div
-                            variants={slideUp(1)}
-                            initial="initial"
-                            animate="animate"
-                            className="flex justify-center gap-4"
-                        >
-                            {/* Botón Jugar ahora */}
-                            <a className="m-auto bg-custom-navbar bg-custom-navbar-600 py-2 px-12 rounded-3xl text-white bg-custom-navbar hover:bg-custom-navbar-700 transition-all duration-300 flex items-center cursor-pointer animate-pulse bg-green-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
+                            animate="animate" className="px-6 md:px-12 lg:pl-24 lg:pr-12 py-16 flex flex-col justify-center max-w-xl mx-auto lg:mx-0 ">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight mb-6 text-dark-green ">
+          Rediscover the Taste of Tradition: Slow-Cooked, 100% Natural.
+        </h1>
+        <p className="text-lg text-dark-green/80 mb-8 leading-relaxed">
+          Experience the authentic flavor of handcrafted puddings, made with patience and the finest natural ingredients, just like it used to be.
+        </p>
+        <div className='flex'>
+            <a className="m-auto bg-custom-navbar bg-custom-navbar-600 py-2 px-12 rounded-3xl text-white bg-custom-navbar hover:bg-custom-navbar-700 transition-all duration-300 flex items-center cursor-pointer animate-pulse bg-terracota-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
                                 PRE-ORDER NOW
-                                <i className="ml-2 bi bi-hand-index-thumb-fill text-xl"></i>
+                                <i className="ml-1 bi bi-arrow-up-right"></i>
                             </a>
+        </div>
+      </motion.div>
 
-                             {/* Botón Ver Gameplay */}
-                            {/* <a className="text-white animate-pulse bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
-                                Ver GamePlay
-                                <i className="ml-2 bi bi-youtube text-xl"></i>
-                            </a>  */}
-                         </motion.div>
-                    </div>
-                    
-                </div>
-
-                {/* imagen */}
-                <div className="flex h-full ">
-                    <motion.div
-                    variants={slideInFromSide("right", 0.5)}
-                    initial="initial"
-                    animate="animate"
-                    className="m-auto p-10 sm:p-10 md:p-15 lg:p-30 xl:max-w-[500px] 2xl:max-w-[700px]"
-                    >
-                        <img src={Personaje2} alt="Personaje de juego" />
-                    </motion.div>
-                </div>
-                
-            </div>
-        </section>
-        
-    );
+      {/* Right Image Content - Full bleed on right side */}
+      <div className="h-full w-full relative min-h-[400px] lg:min-h-[700px] border-solid  rounded-lg">
+         <motion.img
+            variants={slideUp(0.2)}
+            initial="initial"
+            animate="animate"
+            src={BowlOne}
+            alt="MiclhReis bowl"
+            className="m-auto  rounded-lg"
+            />
+        {/* Subtle overlay for better integration if needed, though the design is clean */}
+        {/* <div className="absolute inset-0 bg-dark-green/10 mix-blend-multiply"></div> */}
+      </div>
+    </section>
+  );
 };
 
-export default Hero;
+export default HeroSection;
