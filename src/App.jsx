@@ -15,7 +15,7 @@ function App() {
     };
   return (
      <div
-            style={bgImagen}
+        
             className="flex justify-center overflow-hidden min-h-screen"
         >
                 <div className="min-h-screen flex flex-col">

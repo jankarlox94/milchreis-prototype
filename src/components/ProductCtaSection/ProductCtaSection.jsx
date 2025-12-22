@@ -1,7 +1,8 @@
 import React from 'react';
+import packagedProductImage from "../../assets/cup-test.png";
 
 // Image of packaged product in a gift box
-const packagedProductImage = "https://images.unsplash.com/photo-1579631158231-51c78c325c7a?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+// const packagedProductImage = "https://images.unsplash.com/photo-1579631158231-51c78c325c7a?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 const ProductCtaSection = () => {
   return (
@@ -9,7 +10,7 @@ const ProductCtaSection = () => {
       <div className="bg-white/50 rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-12 shadow-sm border border-peach-beige/30">
         
         {/* Product Image Container */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full h-full lg:w-1/2 lg:h-full">
             <img 
                 src={packagedProductImage} 
                 alt="Signature Caramel Pudding Gift Box" 
@@ -20,10 +21,10 @@ const ProductCtaSection = () => {
         {/* Text and CTA Container */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           <h2 className="font-serif font-bold text-3xl md:text-4xl mb-6 text-dark-green leading-tight">
-            The Star Product: Our Signature Caramel Pudding
+            The Star Product:The King's Rice Pudding
           </h2>
           <p className="text-dark-green/80 text-lg mb-8 leading-relaxed">
-            Our creamiest signature caramel pudding. Made to order using only milk, eggs, sugar, and real vanilla bean. Delivered fresh in sustainable packaging.
+            Our creamiest pudding. Made to order using only milk, rice, sugar,salt and real vanilla extract,cinammon, butter and lemon cest. Delivered fresh in sustainable packaging.
           </p>
           <div>
             <button className="btn-terracotta">
