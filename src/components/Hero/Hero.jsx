@@ -16,10 +16,10 @@ const HeroSection = () => {
                             initial="initial"
                             animate="animate" className="px-6 md:px-12 lg:pl-24 lg:pr-12 py-16 flex flex-col justify-center max-w-xl mx-auto lg:mx-0 ">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight mb-6 text-dark-green ">
-          Rediscover the Taste of Tradition: Slow-Cooked, 100% Natural.
+          Rediscover the Taste of Tradition: Rice Pudding, Slow-Cooked, 100% Natural.
         </h1>
         <p className="text-lg text-dark-green/80 mb-8 leading-relaxed">
-          Experience the authentic flavor of handcrafted puddings, made with patience and the finest natural ingredients, just like it used to be.
+          Experience the authentic flavor of handcrafted rice pudding, made with patience and the finest natural ingredients, just like it used to be.
         </p>
         <div className='flex'>
             <a className="m-auto bg-custom-navbar bg-custom-navbar-600 py-2 px-12 rounded-3xl text-white bg-custom-navbar hover:bg-custom-navbar-700 transition-all duration-300 flex items-center cursor-pointer animate-pulse bg-terracota-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">

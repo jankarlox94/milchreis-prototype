@@ -1,8 +1,10 @@
 import React from 'react';
+import thenImage from "../../assets/workers.png";
+import nowImage from "../../assets/industrial-kitchen.png";
 
 // Placeholder images for the concept
-const thenImage = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Vintage kitchen vibe
-const nowImage = "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Modern supermarket aisle
+// const thenImage = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Vintage kitchen vibe
+// const nowImage = "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Modern supermarket aisle
 
 const ComparisonBlock = ({ title, text, imageSrc, isSepia }) => (
   <div className="flex-1">
@@ -24,7 +26,7 @@ const ComparisonSection = () => {
       
       <div className="flex flex-col md:flex-row gap-12 lg:gap-20">
         <ComparisonBlock 
-          title="Then:"
+          title="Then(The way we do it):"
           text="Time-honored recipes, fresh ingredients harvested seasonally, and daily preparation with care and patience."
           imageSrc={thenImage}
           isSepia={true}
