@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        glow: {
+          '0%, 100%': { filter: 'drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fca311)' },
+          '50%': { filter: 'drop-shadow(0 0 15px #fff) drop-shadow(0 0 30px #fca311)' },
+        },
+      },
+      animation: {
+        'text-glow': 'glow 2s ease-in-out infinite',
+      },
       colors: {
         'custom-navbar': '#C88147',
         'cream': '#FAF9F3',

@@ -53,7 +53,7 @@ const Navbar = () => {
    
 
     return (
-        <nav className="w-full py-2 px-6 md:px-12 flex justify-between items-center max-w-container-desktop mx-auto">
+        <nav className="w-full 2xl:py-2 px-6 md:px-12 flex justify-between items-center max-w-container-desktop mx-auto">
             <div className="flex justify-between items-center sm:px-12 sm:py-4 px-4 ">
                 {/* Logo */}
                 
