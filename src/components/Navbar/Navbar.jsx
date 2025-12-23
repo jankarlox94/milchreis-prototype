@@ -53,8 +53,8 @@ const Navbar = () => {
    
 
     return (
-        <nav className="w-full py-4 px-6 md:px-12 flex justify-between items-center max-w-container-desktop mx-auto">
-            <div className="flex justify-between items-center sm:px-12 sm:py-6 px-4 py-3">
+        <nav className="w-full py-2 px-6 md:px-12 flex justify-between items-center max-w-container-desktop mx-auto">
+            <div className="flex justify-between items-center sm:px-12 sm:py-4 px-4 ">
                 {/* Logo */}
                 
 
@@ -135,6 +135,9 @@ const Navbar = () => {
                     isOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
             >
+            <div>
+                
+            </div>
                 {/* Links de navegación móvil */}
                 <ul className="flex flex-col px-4 py-2">
                     {navbarLinks.map((link) => (

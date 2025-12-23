@@ -4,6 +4,7 @@ import UspBanner from './components/UspBanner/UspBanner';
 import ComparisonSection from './components/ComparisonSection/ComparisonSection';
 import ProductCtaSection from './components/ProductCtaSection/ProductCtaSection';
 import Fondo2 from "./assets/fondo-non-invasive.png";
+import PurchaseCTA from './components/PurchaseCTA/PurchaseCTA';
 
 function App() {
       const bgImagen = {
@@ -27,6 +28,7 @@ function App() {
                     <UspBanner />
                     <ProductCtaSection />
                     <ComparisonSection />
+                    <PurchaseCTA />
                    
                 </main>
                 {/* Simple footer for completeness */}
