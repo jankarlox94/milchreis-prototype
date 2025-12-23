@@ -1,4 +1,4 @@
-import React from 'react';
+import Bowls from '../../assets/multiple-bowls.png'
 
 const PurchaseCTA = () => {
   return (
@@ -7,7 +7,7 @@ const PurchaseCTA = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url('/path-to-your-rice-pudding-image.jpg')`, // Replace with your high-res image
+          backgroundImage: `url(${Bowls})`, // Replace with your high-res image
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
