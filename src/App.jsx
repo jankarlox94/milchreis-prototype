@@ -25,7 +25,7 @@ function App() {
                 </header>
                 <main className="flex-grow ">
                     <HeroSection />
-                    <UspBanner />
+                    {/* <UspBanner /> */}
                     <ProductCtaSection />
                     <ComparisonSection />
                     <PurchaseCTA />

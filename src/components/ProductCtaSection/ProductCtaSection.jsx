@@ -20,7 +20,7 @@ const ProductCtaSection = () => {
 
         {/* Text and CTA Container */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          <h2 className="font-serif font-bold text-3xl md:text-4xl mb-6 text-dark-green leading-tight">
+          <h2 className="text-slate-900 leading-tight font-bold text-3xl md:text-4xl mb-6 text-dark-green leading-tight">
             The Star Product:The King's Rice Pudding
           </h2>
           <p className="text-dark-green/80 text-lg mb-8 leading-relaxed">

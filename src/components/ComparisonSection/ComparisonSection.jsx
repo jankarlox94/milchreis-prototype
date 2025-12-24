@@ -12,7 +12,7 @@ const ComparisonBlock = ({ title, text, imageSrc, isSepia }) => (
       <img src={imageSrc} alt={title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
         {/* Dark overlay to make white text pop if needed, but design uses dark text below */}
     </div>
-    <h3 className="font-serif font-bold text-2xl mb-2 text-dark-green">{title}</h3>
+    <h3 className="text-slate-900 leading-tight text-2xl mb-2 text-dark-green">{title}</h3>
     <p className="text-dark-green/80 leading-relaxed">{text}</p>
   </div>
 );
@@ -20,13 +20,13 @@ const ComparisonBlock = ({ title, text, imageSrc, isSepia }) => (
 const ComparisonSection = () => {
   return (
     <section className="py-20 px-6 md:px-12 max-w-container-desktop mx-auto">
-      <h2 className="text-center font-serif font-bold text-3xl md:text-4xl mb-12 text-dark-green">
+      <h2 className="text-center text-slate-900 leading-tight  font-bold text-3xl md:text-4xl mb-12 text-dark-green">
        Defiantly Natural. Honestly Delicious.
       
         
       </h2>
-       <h2 className="text-center font-serif font-bold text-3xl md:text-4xl mb-12 text-dark-green">The Why: Then vs. Now</h2> 
-      <h3 className="text-center font-serif font-bold text-xl md:text-xl mb-12 text-dark-green">"We believe in selling only the desserts we personally love and trust. Our strict commitment to natural ingredients is our way of reclaiming the essence of real food—returning to quality that has been lost in the age of mass production."</h3>
+       <h2 className="text-center text-slate-900 leading-tight  font-bold text-3xl md:text-4xl mb-12 text-dark-green">The Why: Then vs. Now</h2> 
+      <h3 className="text-center text-slate-900 leading-tight  font-bold text-xl md:text-xl mb-12 text-dark-green">"We believe in selling only the desserts we personally love and trust. Our strict commitment to natural ingredients is our way of reclaiming the essence of real food—returning to quality that has been lost in the age of mass production."</h3>
       
       <div className="flex flex-col md:flex-row gap-12 lg:gap-20">
         <ComparisonBlock 
