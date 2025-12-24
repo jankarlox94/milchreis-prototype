@@ -9,6 +9,7 @@ import { slideUp, slideInFromSide } from "../../utility/animation";
 import AutoImageSlider from '../AutoImageSlider/AutoImageSlider';
 import UspBanner from '../UspBanner/UspBanner';
 import Bowls from '../../assets/multiple-bowls-white.png'
+import HeroTop from '../HeroTop/HeroTop';
 
 
 const HeroSection = () => {
@@ -21,39 +22,41 @@ const HeroSection = () => {
       //           backgroundSize: 'cover',
       //           backgroundPosition: 'center',
       //         }}></section>
-    <section className=" w-full min-h-[600px] 2xl:min-h-[985px] " style={{
+    <div>
+      <HeroTop />
+    {/* <section className=" w-full min-h-[600px] 2xl:min-h-[985px]  " style={{
                 backgroundImage: `url(${Bowls})`, // Replace with your high-res image
                 backgroundSize: 'cover',
                 backgroundPosition: 'right',
               }}>
       {/* Left Text Content */}
       {/* <div></div> */}
-      <div className='flex h-full justify-around' >
+      {/* <div className='flex h-full justify-around' >
          <motion.div variants={slideUp(0.2)}
                             initial="initial"
                             animate="animate" className="px-6 md:px-12 lg:pl-24 lg:pr-12 py-16 flex flex-col justify-center max-w-xl m-auto lg:mx-0 2xl:mt-40 lg:mt-5">
             <h1 className=" font-serif text-4xl md:text-5xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold leading-tight mb-6 font-bold text-black animate-text-glow ">
             Rediscover the Taste of Tradition: Rice Pudding, Slow-Cooked, 100% Natural.
-            </h1>
+            </h1> */}
             {/* <p className="text-lg text-dark-green/80 mb-8 leading-relaxed">
             Experience the authentic flavor of handcrafted rice pudding, made with patience and the finest natural ingredients, just like it used to be.
             </p> */}
-            <div className='flex '>
+            {/* <div className='flex '> */}
               {/* Pulsing Purchase Button */}
-        <div className="flex justify-center">
-          <button className="group relative">
+        {/* <div className="flex justify-center">
+          <button className="group relative"> */}
             {/* Pulsing Aura Effect */}
-            <span className="absolute -inset-1 rounded-full bg-orange-300  2x:bg-orange-500 opacity-75 blur animate-pulse group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></span>
+            {/* <span className="absolute -inset-1 rounded-full bg-orange-300  2x:bg-orange-500 opacity-75 blur animate-pulse group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></span> */}
             
             {/* Main Button */}
-            <button className="relative flex items-center justify-center px-10 py-5 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full text-xl md:text-2xl font-bold uppercase tracking-widest shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-200">
+            {/* <button className="relative flex items-center justify-center px-10 py-5 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full text-xl md:text-2xl font-bold uppercase tracking-widest shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-200">
               Order Your Rice Pudding Now!
             </button>
           </button>
-        </div>
-            </div>
-      </motion.div>
-      </div>
+        </div> */}
+            {/* </div> */}
+      {/* </motion.div> */}
+      {/* </div> */}
      
 
       {/* Right Image Content - Full bleed on right side */}
@@ -72,7 +75,9 @@ const HeroSection = () => {
         {/* <div className="absolute inset-0 bg-dark-green/10 mix-blend-multiply"></div> */}
       {/* </div> */}
     
-    </section>
+    {/* </section>  */}
+    </div>
+    
      
   );
 };

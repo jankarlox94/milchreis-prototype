@@ -40,6 +40,7 @@ const PurchaseCTA = () => {
           </button>
         </div>
       </div>
+      
 
       {/* Tailwind Custom Animation Config (Add to tailwind.config.js if needed) */}
       <style jsx>{`
