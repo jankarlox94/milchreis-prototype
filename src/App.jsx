@@ -5,6 +5,7 @@ import ComparisonSection from './components/ComparisonSection/ComparisonSection'
 import ProductCtaSection from './components/ProductCtaSection/ProductCtaSection';
 import Fondo2 from "./assets/fondo-non-invasive.png";
 import PurchaseCTA from './components/PurchaseCTA/PurchaseCTA';
+import QualityCraftsmanship from './components/QualityCraftsmanship/QualityCraftsmanship';
 
 function App() {
       const bgImagen = {
@@ -27,6 +28,7 @@ function App() {
                     <HeroSection />
                     {/* <UspBanner /> */}
                     <ProductCtaSection />
+                    <QualityCraftsmanship />
                     <ComparisonSection />
                     <PurchaseCTA />
                    

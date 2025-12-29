@@ -1,6 +1,7 @@
 import React from 'react';
 import BowlOne from "../../assets/rice-pudding-bowl.png";
 import BowlTwo from "../../assets/bowl-4.png";
+
 import BowlThree from "../../assets/fondo-3.png";
 import BowlFour from "../../assets/bowl-5.png";
 import BowlSix from "../../assets/bowl-6.png";
