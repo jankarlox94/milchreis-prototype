@@ -4,7 +4,8 @@ import UspBanner from '../UspBanner/UspBanner';
 
 const HeroTop = () => {
   return (
-    <section className="relative lg:max-h-[40.063rem] 2xl:h-screen w-full overflow-hidden bg-[#FDFCF8] ">
+     <section className="relative lg:max-h-[40.063rem] 2xl:max-h-[60.063rem] w-full overflow-hidden bg-[#FDFCF8] ">
+    {/* <section className="relative max-h-[68.5rem] 2xl:max-h-[80rem] w-full overflow-hidden bg-[#FDFCF8] "> */}
       {/* Background Image - Subtle & Modern */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -45,8 +46,9 @@ const HeroTop = () => {
             </div>
             </div>
       </div>
-        <div className="relative z-10 lg:mt-[19vh] 2xl:mt-0">
-            <UspBanner className="2xl:mb-[10vh]" />// continuar aqui
+       {/* <div className="relative z-10 lg:mt-[7.8rem] 2xl:mt-[7.8rem]"></div> */}
+        <div className="relative z-10 lg:mt-[7.8rem]">
+            <UspBanner />
 
         </div>
     </div>
