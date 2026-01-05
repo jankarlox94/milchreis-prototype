@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import thenImage from "../../assets/workers.png";
 import nowImage from "../../assets/industrial-kitchen.png";
 
@@ -6,41 +6,197 @@ import nowImage from "../../assets/industrial-kitchen.png";
 // const thenImage = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Vintage kitchen vibe
 // const nowImage = "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Modern supermarket aisle
 
-const ComparisonBlock = ({ title, text, imageSrc, isSepia }) => (
-  <div className="flex-1">
-    <div className={`mb-6 overflow-hidden rounded-2xl shadow-md aspect-[4/3] relative ${isSepia ? 'sepia-[.4]' : ''}`}>
-      <img src={imageSrc} alt={title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-        {/* Dark overlay to make white text pop if needed, but design uses dark text below */}
-    </div>
-    <h3 className="text-slate-900 leading-tight text-2xl mb-2 text-dark-green">{title}</h3>
-    <p className="text-dark-green/80 leading-relaxed">{text}</p>
-  </div>
-);
-
 const ComparisonSection = () => {
+  // Reusable Checkmark Icon for the "Good" side
+  const CheckIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6 text-dark-green flex-shrink-0 mt-1"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+
+  // Reusable "X" Icon for the "Bad" side
+  const XIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6 text-terracotta opacity-60 flex-shrink-0 mt-1"
+    >
+      <path
+        fillRule="evenodd"
+        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+
   return (
-    <section className="py-20 px-6 md:px-12 max-w-container-desktop mx-auto">
-      <h2 className="text-center text-slate-900 leading-tight  font-bold text-3xl md:text-4xl mb-12 text-dark-green">
-       Defiantly Natural. Honestly Delicious.
-      
-        
-      </h2>
-       <h2 className="text-center text-slate-900 leading-tight  font-bold text-3xl md:text-4xl mb-12 text-dark-green">The Why: Then vs. Now</h2> 
-      <h3 className="text-center text-slate-900 leading-tight  font-bold text-xl md:text-xl mb-12 text-dark-green">"We believe in selling only the desserts we personally love and trust. Our strict commitment to natural ingredients is our way of reclaiming the essence of real food—returning to quality that has been lost in the age of mass production."</h3>
-      
-      <div className="flex flex-col md:flex-row gap-12 lg:gap-20">
-        <ComparisonBlock 
-          title="Then(The way we do it):"
-          text="Time-honored recipes, fresh ingredients harvested seasonally, and daily preparation with care and patience."
-          imageSrc={thenImage}
-          isSepia={true}
-        />
-        <ComparisonBlock 
-          title="Now:"
-          text="Mass production, artificial flavors, preservatives for long shelf life, and a disconnect from the source."
-          imageSrc={nowImage}
-          isSepia={false}
-        />
+    <section className="bg-cream py-4 sm:py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-dark-green mb-6">
+            Not All Rice Pudding Is Created Equal
+          </h2>
+          <p className="text-lg text-dark-green/80 leading-relaxed">
+            Taste the difference real ingredients make. See how our small-batch,
+            all-natural approach stacks up against the industrial giants.
+          </p>
+        </div>
+
+        {/* Comparison Grid */}
+        <div className="grid md:grid-cols-2 gap-8 items-stretch relative">
+          {/* VS Badge (Desktop only central element) */}
+          <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-dark-green text-cream font-bold rounded-full w-16 h-16 items-center justify-center border-4 border-cream shadow-lg">
+            VS
+          </div>
+
+          {/* OUR SIDE - The Good Stuff */}
+          <div className="relative bg-peach-beige rounded-3xl shadow-[0_20px_50px_rgba(200,129,71,0.15)] overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] md:z-0">
+            {/* "Best Choice" Badge */}
+            <div className="absolute top-0 right-0 bg-terracotta text-white text-xs font-bold uppercase tracking-wider py-2 px-6 rounded-bl-2xl z-20 shadow-sm">
+              The Natural Choice
+            </div>
+
+            {/* Card Header Image/Banner */}
+            <div className="h-48 bg-terracotta/20 flex items-center justify-center relative overflow-hidden">
+              {/* Abstract background shapes */}
+              <div className="absolute -top-10 -left-10 w-32 h-32 bg-terracotta/30 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cream/40 rounded-full blur-2xl"></div>
+
+              {/* Icon representing wholesome ingredients */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-24 w-24 text-dark-green"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+
+            {/* Content */}
+            <div className="p-8 sm:p-10 bg-gradient-to-b from-peach-beige to-[#f9dacd]">
+              <h3 className="text-2xl font-bold text-dark-green mb-2">
+                Our All-Natural Rice Pudding
+              </h3>
+              <p className="text-dark-green/80 mb-8 italic">
+                Just like grandma used to make.
+              </p>
+
+              <ul className="space-y-5">
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-dark-green font-medium text-lg">
+                    Five simple, real ingredients.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-dark-green text-lg">
+                    Slow-cooked in small batches for creamy perfection.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-dark-green text-lg">
+                    Real whole milk and pure cane sugar.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-dark-green text-lg">
+                    Naturally gluten-free, nothing artificial ever.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-dark-green text-lg">
+                    Rich, authentic, homemade taste.
+                  </span>
+                </li>
+              </ul>
+
+              {/* <div className="mt-10">
+                <button className="w-full py-4 bg-terracotta hover:bg-dark-green text-white font-bold rounded-xl transition-colors duration-300 shadow-md">
+                  Shop Real Rice Pudding
+                </button>
+              </div> */}
+            </div>
+          </div>
+
+          {/* THEIR SIDE - The Competition */}
+          <div className="relative bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden md:z-0 md:mt-8 md:mb-8">
+            {/* Card Header Image/Banner */}
+            <div className="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+              {/* Icon representing industrial process */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-24 w-24 text-gray-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+
+            {/* Content */}
+            <div className="p-8 sm:p-10 bg-gray-50 h-full">
+              <h3 className="text-2xl font-bold text-gray-700 mb-2">
+                Mass Produced Brands
+              </h3>
+              <p className="text-gray-500 mb-8 italic">
+                (e.g., Kozy Shack, store brands)
+              </p>
+
+              <ul className="space-y-5">
+                <li className="flex items-start gap-3 text-gray-600">
+                  <XIcon />
+                  <span>Long lists of unpronounceable ingredients.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <XIcon />
+                  <span>Made in giant industrial vats.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <XIcon />
+                  <span>Uses thickeners, gums, and artificial flavors.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <XIcon />
+                  <span>Contains preservatives for shelf stability.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <XIcon />
+                  <span>Often gummy or overly sweet texture.</span>
+                </li>
+              </ul>
+              {/* Empty div to balance the button height on the other side if needed, or just leave empty space */}
+              <div className="mt-10 h-[56px]"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
