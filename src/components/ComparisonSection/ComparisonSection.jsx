@@ -1,6 +1,12 @@
 import React from "react";
 import thenImage from "../../assets/workers.png";
 import nowImage from "../../assets/industrial-kitchen.png";
+import { motion } from "framer-motion";
+import { slideUp, slideInFromSide } from "../../utility/animation";
+import BowlOne from "../../assets/rice-pudding-bowl.png";
+import Bowls from "../../assets/multiple-bowls-white.png";
+import MassProdDesserts from "../../assets/industrial-kitchen.png";
+import Workers from "../../assets/workers.png";
 
 // Placeholder images for the concept
 // const thenImage = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Vintage kitchen vibe
@@ -68,13 +74,20 @@ const ComparisonSection = () => {
             </div>
 
             {/* Card Header Image/Banner */}
-            <div className="h-48 bg-terracotta/20 flex items-center justify-center relative overflow-hidden">
+            <div
+              className="h-48 bg-terracotta/20 flex items-center justify-center relative overflow-hidden"
+              style={{
+                backgroundImage: `url(${Workers})`, // Replace with your high-res image
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
               {/* Abstract background shapes */}
               <div className="absolute -top-10 -left-10 w-32 h-32 bg-terracotta/30 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cream/40 rounded-full blur-2xl"></div>
 
               {/* Icon representing wholesome ingredients */}
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-24 w-24 text-dark-green"
                 fill="none"
@@ -87,11 +100,21 @@ const ComparisonSection = () => {
                   strokeWidth={1.5}
                   d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
-              </svg>
+              </svg> */}
             </div>
 
             {/* Content */}
             <div className="p-8 sm:p-10 bg-gradient-to-b from-peach-beige to-[#f9dacd]">
+              {/* <div className="max-w-full">
+                <motion.img
+                  variants={slideUp(0.2)}
+                  initial="initial"
+                  animate="animate"
+                  src={BowlOne}
+                  alt="MiclhReis bowl"
+                  className="m-auto rounded-lg"
+                />
+              </div> */}
               <h3 className="text-2xl font-bold text-dark-green mb-2">
                 Our All-Natural Rice Pudding
               </h3>
@@ -143,9 +166,16 @@ const ComparisonSection = () => {
           {/* THEIR SIDE - The Competition */}
           <div className="relative bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden md:z-0 md:mt-8 md:mb-8">
             {/* Card Header Image/Banner */}
-            <div className="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+            <div
+              className="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden"
+              style={{
+                backgroundImage: `url(${MassProdDesserts})`, // Replace with your high-res image
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
               {/* Icon representing industrial process */}
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-24 w-24 text-gray-300"
                 fill="none"
@@ -158,7 +188,7 @@ const ComparisonSection = () => {
                   strokeWidth={1.5}
                   d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                 />
-              </svg>
+              </svg> */}
             </div>
 
             {/* Content */}
