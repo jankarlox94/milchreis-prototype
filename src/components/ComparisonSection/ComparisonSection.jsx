@@ -252,7 +252,7 @@ const ComparisonSection = () => {
                 Mass Produced Brands
               </h3>
               <p className="text-gray-500 mb-8 italic">
-                (e.g., Kozy Shack, store brands)
+                (e.g.,any store brands)
               </p>
 
               <ul className="space-y-5">
@@ -275,6 +275,10 @@ const ComparisonSection = () => {
                 <li className="flex items-start gap-3 text-gray-600">
                   <XIcon />
                   <span>Often gummy or overly sweet texture.</span>
+                </li>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <XIcon />
+                  <span>Questionable nutritious value</span>
                 </li>
               </ul>
               {/* Empty div to balance the button height on the other side if needed, or just leave empty space */}
