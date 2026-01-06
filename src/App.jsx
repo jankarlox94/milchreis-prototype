@@ -6,6 +6,7 @@ import ProductCtaSection from "./components/ProductCtaSection/ProductCtaSection"
 import Fondo2 from "./assets/fondo-non-invasive.png";
 import PurchaseCTA from "./components/PurchaseCTA/PurchaseCTA";
 import QualityCraftsmanship from "./components/QualityCraftsmanship/QualityCraftsmanship";
+import QualityShowcaseCard from "./components/QualityShowcaseCard/QualityShowcaseCard";
 
 function App() {
   const bgImagen = {
@@ -23,11 +24,9 @@ function App() {
         </header>
         <main className="flex-grow ">
           <HeroSection />
-          {/* <UspBanner /> */}
           <ProductCtaSection />
           <ComparisonSection />
           <QualityCraftsmanship />
-
           <PurchaseCTA />
         </main>
         {/* Simple footer for completeness */}

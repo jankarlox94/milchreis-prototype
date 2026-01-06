@@ -1,18 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import thenImage from "../../assets/workers.png";
 import nowImage from "../../assets/industrial-kitchen.png";
 import { motion } from "framer-motion";
 import { slideUp, slideInFromSide } from "../../utility/animation";
 import BowlOne from "../../assets/rice-pudding-bowl.png";
-import Bowls from "../../assets/multiple-bowls-white.png";
+import Bowls from "../../assets/multiple-bowls.png";
+import Ingredients from "../../assets/real-ingredients.png";
 import MassProdDesserts from "../../assets/industrial-kitchen.png";
 import Workers from "../../assets/workers.png";
+import DiffCupSizes from "../../assets/rice-cups-diff-sizes.png";
 
 // Placeholder images for the concept
 // const thenImage = "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Vintage kitchen vibe
 // const nowImage = "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Modern supermarket aisle
 
 const ComparisonSection = () => {
+  // test image slider
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // 1. Image Data (Using placeholders relevant to Rice Pudding/Ingredients)
+  const images = [
+    {
+      url: `${BowlOne}`,
+      alt: "Creamy texture close up",
+    },
+    {
+      url: `${Ingredients}`,
+      alt: "Premium Ingredients",
+    },
+    {
+      url: `${Bowls}`,
+      alt: "Multiple options",
+    },
+    {
+      url: `${DiffCupSizes}`,
+      alt: "Menu options",
+    },
+    {
+      url: `${DiffCupSizes}`,
+      alt: "Menu options",
+    },
+    {
+      url: `${Workers}`,
+      alt: "Hand-made cooked with care",
+    },
+  ];
+
+  // 2. Timer Logic: Change image every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+  //
+
   // Reusable Checkmark Icon for the "Good" side
   const CheckIcon = () => (
     <svg
@@ -73,34 +118,43 @@ const ComparisonSection = () => {
               The Natural Choice
             </div>
 
-            {/* Card Header Image/Banner */}
-            <div
-              className="h-48 bg-terracotta/20 flex items-center justify-center relative overflow-hidden"
-              style={{
-                backgroundImage: `url(${Workers})`, // Replace with your high-res image
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              {/* Abstract background shapes */}
-              <div className="absolute -top-10 -left-10 w-32 h-32 bg-terracotta/30 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cream/40 rounded-full blur-2xl"></div>
+            {/* --- CARD HEADER (Sliding Background) --- */}
+            <div className="relative h-72 w-full overflow-hidden">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+                    index === currentImageIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  {/* Image with a slight zoom effect for dynamism */}
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className={`w-full h-full object-cover transition-transform duration-[4000ms] ease-linear ${
+                      index === currentImageIndex ? "scale-110" : "scale-100"
+                    }`}
+                  />
+                  {/* Overlay Gradient to ensure header text readability if you add any */}
+                  <div className="absolute inset-0 bg-dark-green/20 mix-blend-multiply"></div>
+                </div>
+              ))}
 
-              {/* Icon representing wholesome ingredients */}
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-24 w-24 text-dark-green"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg> */}
+              {/* Dots Indicator */}
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex
+                        ? "bg-cream w-6"
+                        : "bg-white/50 hover:bg-white"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Content */}
