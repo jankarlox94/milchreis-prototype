@@ -119,11 +119,16 @@ const Navbar = () => {
 
       {/* Menú móvil */}
       <div
-        className={`md:hidden absolute w-full bg-custom-navbar bg-custom-navbar-950 transition-all duration-300 ${
+        className={`md:hidden absolute mt-[9rem] mx-auto z-50  w-[88%] bg-custom-navbar bg-custom-navbar-950 transition-all duration-300 ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <div></div>
+        <div
+          className="absolute bottom-0 right-0 bg-dark-green text-white text-xs font-bold uppercase tracking-wider py-2 px-6 rounded-bl-2xl z-20 shadow-sm"
+          onClick={() => setIsOpen(false)}
+        >
+          X
+        </div>
         {/* Links de navegación móvil */}
         <ul className="flex flex-col px-4 py-2">
           {navbarLinks.map((link) => (

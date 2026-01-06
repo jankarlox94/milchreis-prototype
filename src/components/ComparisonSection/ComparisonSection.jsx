@@ -6,6 +6,7 @@ import { slideUp, slideInFromSide } from "../../utility/animation";
 import BowlOne from "../../assets/rice-pudding-bowl.png";
 import Bowls from "../../assets/multiple-bowls.png";
 import Ingredients from "../../assets/real-ingredients.png";
+import Toppings from "../../assets/toppings-img.png";
 import MassProdDesserts from "../../assets/industrial-kitchen.png";
 import Workers from "../../assets/workers.png";
 import DiffCupSizes from "../../assets/rice-cups-diff-sizes.png";
@@ -33,8 +34,8 @@ const ComparisonSection = () => {
       alt: "Multiple options",
     },
     {
-      url: `${DiffCupSizes}`,
-      alt: "Menu options",
+      url: `${Toppings}`,
+      alt: "Toppings options",
     },
     {
       url: `${DiffCupSizes}`,
