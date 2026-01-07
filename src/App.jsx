@@ -7,6 +7,9 @@ import Fondo2 from "./assets/fondo-non-invasive.png";
 import PurchaseCTA from "./components/PurchaseCTA/PurchaseCTA";
 import QualityCraftsmanship from "./components/QualityCraftsmanship/QualityCraftsmanship";
 import QualityShowcaseCard from "./components/QualityShowcaseCard/QualityShowcaseCard";
+import LandingPage from "./components/LandingPage/LandingPage.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AboutPage from "./components/AboutPage/AboutPage.jsx";
 
 function App() {
   const bgImagen = {
@@ -17,25 +20,32 @@ function App() {
     position: "relative",
   };
   return (
-    <div className="flex justify-center overflow-hidden min-h-screen">
-      <div className="min-h-screen w-full  flex flex-col">
-        <header>
-          <Navbar />
-        </header>
-        <main className="flex-grow ">
-          <HeroSection />
+    <BrowserRouter>
+      <div className="flex justify-center overflow-hidden min-h-screen">
+        <div className="min-h-screen w-full  flex flex-col">
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/about" element={<AboutPage />} />
+            </Routes>
+
+            {/* <HeroSection />
           <ProductCtaSection />
           <ComparisonSection />
           <QualityCraftsmanship />
-          <PurchaseCTA />
-        </main>
-        {/* Simple footer for completeness */}
-        <footer className="py-8 text-center text-dark-green/60 text-sm">
-          © {new Date().getFullYear()} MilchReis Pudding Co. USA🇺🇸. All rights
-          reserved.
-        </footer>
+          <PurchaseCTA /> */}
+          </main>
+          {/* Simple footer for completeness */}
+          <footer className="py-8 text-center text-dark-green/60 text-sm">
+            © {new Date().getFullYear()} MilchReis Pudding Co. USA🇺🇸. All rights
+            reserved.
+          </footer>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

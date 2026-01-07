@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logo2 from "../../assets/navbar-new-box.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,22 +13,22 @@ const Navbar = () => {
     {
       id: 1,
       title: "About",
-      link: "/",
+      link: "/about",
     },
     {
       id: 2,
       title: "Products",
-      link: "#",
+      link: "/",
     },
     {
       id: 3,
       title: "Reviews",
-      link: "#",
+      link: "/",
     },
     {
       id: 4,
       title: "Contact",
-      link: "#",
+      link: "/",
     },
   ];
 
@@ -60,12 +61,12 @@ const Navbar = () => {
           <ul className="flex sm:space-x-8 space-x-4 px-4">
             {navbarLinks.map((link) => (
               <li key={link.id}>
-                <a
-                  href={link.link}
+                <Link
+                  to={link.link}
                   className="sm:text-lg text-sm  hover:text-sky-100 transition-transform duration-300 transform hover:scale-110 inline-block xl:text-sm 2xl:text-lg"
                 >
                   {link.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
