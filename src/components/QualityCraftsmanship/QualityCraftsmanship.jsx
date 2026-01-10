@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import BowlOne from "../../assets/rice-pudding-bowl.png";
 import BowlTwo from "../../assets/bowl-4.png";
 import RealIngredients from "../../assets/real-ingredients.png";
@@ -18,7 +18,7 @@ const QualityCraftsmanship = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Column */}
           <div className="space-y-6">
-            {/* Card 1: Hand-Crafted Daily */}
+            {/* Card 1: Made on demand */}
             <div className="flex flex-col bg-terracotta sm:flex-row  rounded-2xl p-6 items-start">
               <img
                 src={handCraftedImage}
@@ -26,13 +26,55 @@ const QualityCraftsmanship = () => {
                 className="w-full sm:w-32 sm:h-32 rounded-lg object-cover mb-4 sm:mb-0 sm:mr-6"
               />
               <div>
-                <h3 className="text-xl font-semibold mb-2">Hand-Crafted Daily</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Hand-Crafted Daily
+                </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Our pudding is made fresh daily in small batches, ensuring optimal texture and flavor in every cup.
+                  Our pudding is made fresh daily in small batches, ensuring
+                  optimal texture and flavor in every cup.
                 </p>
               </div>
             </div>
 
+            {/* Card 2: Hand-Crafted Daily */}
+            <div className="flex flex-col bg-terracotta sm:flex-row  rounded-2xl p-6 items-start">
+              <img
+                src={handCraftedImage}
+                alt="Hand-Crafted Daily"
+                className="w-full sm:w-32 sm:h-32 rounded-lg object-cover mb-4 sm:mb-0 sm:mr-6"
+              />
+              <div>
+                <h3 className="text-xl font-semibold mb-2">
+                  Hand-Crafted Daily
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Our pudding is made fresh daily in small batches, ensuring
+                  optimal texture and flavor in every cup.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-6">
+            {/* Card 3: Real Ingredients Only */}
+            <div className="flex flex-col sm:flex-row bg-terracotta rounded-2xl p-6 items-start ">
+              <img
+                src={realIngredientsImage}
+                alt="Real Ingredients Only"
+                className="w-full sm:w-32 sm:h-32 rounded-lg object-cover mb-4 sm:mb-0 sm:mr-6"
+              />
+              <div>
+                <h3 className="text-xl font-semibold mb-2">
+                  Real Ingredients Only
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  We use whole milk, real cream, genuine vanilla, and no
+                  artificial colors or preservatives.
+                </p>
+              </div>
+            </div>
+            {/* place car here */}
             {/* Card 2: Artisan Toppings */}
             <div className="flex flex-col sm:flex-row bg-terracotta rounded-2xl p-6 items-start">
               <img
@@ -43,28 +85,12 @@ const QualityCraftsmanship = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Artisan Toppings</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Each flavor features uniquely designed, unconventional toppings that are as unforgettable as the pudding itself.
+                  Each flavor features uniquely designed, unconventional
+                  toppings that are as unforgettable as the pudding itself.
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Right Column */}
-          <div>
-            {/* Card 3: Real Ingredients Only */}
-            <div className="flex flex-col sm:flex-row bg-terracotta rounded-2xl p-6 items-start h-full">
-              <img
-                src={realIngredientsImage}
-                alt="Real Ingredients Only"
-                className="w-full sm:w-32 sm:h-32 rounded-lg object-cover mb-4 sm:mb-0 sm:mr-6"
-              />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Real Ingredients Only</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  We use whole milk, real cream, genuine vanilla, and no artificial colors or preservatives.
-                </p>
-              </div>
-            </div>
+            {/* ends here */}
           </div>
         </div>
       </div>

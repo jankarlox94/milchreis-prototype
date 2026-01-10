@@ -1,6 +1,7 @@
 import React from "react";
 import Bowls from "../../assets/multiple-bowls-white.png";
 import UspBanner from "../UspBanner/UspBanner";
+import { motion } from "framer-motion";
 
 const HeroTop = () => {
   return (
@@ -16,7 +17,7 @@ const HeroTop = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#FDFCF8] via-[#FDFCF8]/80 to-transparent" />
       </div> */}
 
-      <div className="bg-cream min-h-screen font-sans text-dark-green selection:bg-peach-beige selection:text-dark-green">
+      <div className="bg-cream font-sans text-dark-green selection:bg-peach-beige selection:text-dark-green">
         <div className="relative w-full h-[77.9vh] md:h-[72vh] 2xl:h-[77.9vh]">
           {/* Large Hero Image */}
           <img
@@ -35,10 +36,20 @@ const HeroTop = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-outline-black font-bold mb-6  max-w-full leading-tight">
               Old World Recipe <br />
               <span className="text-peach-beige italic">Oklahoma Heart</span>
-              <h2 className="text-4xl sm:text-4xl lg:text-7xl font-serif text-cream font-bold mb-6 leading-tight">
-                America's Finest Rice Pudding
-              </h2>
             </h1>
+            <div className="mt-[-2rem]  animate-slide-right">
+              <h1 className="text-4xl sm:text-4xl lg:text-7xl font-serif text-outline-black  font-bold  leading-tight">
+                America's Finest Rice Pudding
+              </h1>
+              {/* <motion.h1
+                initial={{ opacity: 0, x: -100 }} // Start off-screen to the left and invisible
+                animate={{ opacity: 1, x: 0 }} // Animate to final position (x: 0, fully visible)
+                transition={{ duration: 1, ease: "easeOut" }} // Set animation properties
+                className="text-4xl font-bold text-green-600"
+              >
+                Sliding text with Framer Motion!
+              </motion.h1> */}
+            </div>
           </div>
         </div>
         {/* <div className="justify-center container mx-auto px-6 relative z-10 grid "> */}

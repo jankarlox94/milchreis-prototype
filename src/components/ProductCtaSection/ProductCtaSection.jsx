@@ -24,10 +24,10 @@ const ProductCtaSection = () => {
             The Star Product:The King's Rice Pudding
           </h2>
           <p className="text-dark-green/80 text-lg mb-8 leading-relaxed">
-            Our creamiest pudding. This recipe comes from 17th century, invented
-            by The Royal Cook for Spain's King. Made to order using only milk,
-            rice, sugar,salt and real vanilla extract,cinammon, butter and lemon
-            cest. Delivered fresh in sustainable packaging.
+            We take a 400-year-old European recipe and cook it fresh in
+            Oklahoma. Our rice pudding is made slowly by local moms using only
+            real ingredients—no shortcuts and absolutely no fake stuff. It’s
+            timeless comfort in a bowl.
           </p>
           <div>
             <button className="btn-terracotta">
