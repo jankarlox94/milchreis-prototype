@@ -32,7 +32,7 @@ const HeroTop = () => {
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-widest text-amber-800 uppercase bg-amber-100 rounded-full">
               Coming Soon
             </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-cream font-bold mb-6  max-w-full leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-outline-black font-bold mb-6  max-w-full leading-tight">
               Old World Recipe <br />
               <span className="text-peach-beige italic">Oklahoma Heart</span>
               <h2 className="text-4xl sm:text-4xl lg:text-7xl font-serif text-cream font-bold mb-6 leading-tight">
