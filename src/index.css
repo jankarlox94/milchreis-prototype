@@ -20,6 +20,6 @@ body {
 
 .text-outline-black {
   color: white; /* Text fill color */
-  text-shadow: 3px 3px 0 #000000, -3px -2px 0 #000000, 3px -3px 0 #000000,
-    -3px 3px 0 #000000;
+  text-shadow: 2px 2px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000,
+    -1px 1px 0 #000000;
 }
