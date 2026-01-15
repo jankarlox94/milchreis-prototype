@@ -1,4 +1,8 @@
 import React from "react";
+import PraireImg from "../../assets/about-pg-praire.png";
+import PraireImgIngredients from "../../assets/about-pg-table-ingredients.png";
+import Workers from "../../assets/workers.png";
+import BookCook from "../../assets/about-pg-cook.png";
 
 const AboutPage = () => {
   return (
@@ -7,7 +11,7 @@ const AboutPage = () => {
       <div className="relative w-full h-[85vh]">
         {/* Large Hero Image */}
         <img
-          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop"
+          src={PraireImg}
           alt="Oklahoma Farm Landscape"
           className="w-full h-full object-cover"
         />
@@ -50,7 +54,7 @@ const AboutPage = () => {
           <div className="order-1 md:order-2 h-[500px] w-full relative">
             <div className="absolute inset-0 bg-peach-beige rounded-tr-[5rem] rounded-bl-[5rem] transform translate-x-4 translate-y-4"></div>
             <img
-              src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1000&auto=format&fit=crop"
+              src={BookCook}
               alt="Antique Book"
               className="relative z-10 w-full h-full object-cover rounded-tr-[5rem] rounded-bl-[5rem] shadow-xl"
             />
@@ -65,13 +69,13 @@ const AboutPage = () => {
             {/* Large Image (Left) */}
             <div className="h-[600px] w-full overflow-hidden rounded-2xl relative group">
               <img
-                src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?q=80&w=1000&auto=format&fit=crop"
+                src={Workers}
                 alt="Pouring Milk"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* Image Badge */}
               <div className="absolute bottom-6 left-6 bg-cream text-dark-green px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider">
-                Locally Sourced
+                Some ingredients are Locally Sourced
               </div>
             </div>
 
@@ -91,7 +95,7 @@ const AboutPage = () => {
                 {[
                   "Fresh Local Milk",
                   "Slow-Cooked Batch Process",
-                  "No Preservatives",
+                  "No Preservatives, Absolutely NO ARTIFICIAL INGREDIENTS",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center text-peach-beige">
                     <svg
