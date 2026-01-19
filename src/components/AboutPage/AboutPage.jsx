@@ -13,7 +13,7 @@ const AboutPage = () => {
         <img
           src={PraireImg}
           alt="Oklahoma Farm Landscape"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover sm:object-right"
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-dark-green/30"></div>
@@ -51,7 +51,7 @@ const AboutPage = () => {
           </div>
 
           {/* Large Image */}
-          <div className="order-1 md:order-2 h-[500px] w-full relative">
+          <div className="order-1 md:order-2 h-[400px] md:h-[500px] md:scale-120 2xl:scale-125  w-full relative">
             <div className="absolute inset-0 bg-peach-beige rounded-tr-[5rem] rounded-bl-[5rem] transform translate-x-4 translate-y-4"></div>
             <img
               src={BookCook}
