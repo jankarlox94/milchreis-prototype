@@ -10,6 +10,7 @@ import QualityShowcaseCard from "./components/QualityShowcaseCard/QualityShowcas
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutPage from "./components/AboutPage/AboutPage.jsx";
+import ProductPage from "./components/ProductPage/ProductPage.jsx";
 
 function App() {
   const bgImagen = {
@@ -30,6 +31,7 @@ function App() {
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/products" element={<ProductPage />} />
             </Routes>
 
             {/* <HeroSection />

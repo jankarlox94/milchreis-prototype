@@ -35,7 +35,14 @@ export default {
         "peach-beige": "#F2C8B5", // Define your custom color name and hex code
       },
       fontFamily: {
-        serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
+        serif: [
+          "Georgia",
+          "Cambria",
+          '"Times New Roman"',
+          "Times",
+          "Merriweather",
+          "serif",
+        ],
         sans: [
           "ui-sans-serif",
           "system-ui",
@@ -45,6 +52,7 @@ export default {
           "Roboto",
           '"Helvetica Neue"',
           "Arial",
+          "Inter",
           "sans-serif",
         ],
       },
