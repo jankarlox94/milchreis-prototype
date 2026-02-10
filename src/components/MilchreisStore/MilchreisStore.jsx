@@ -69,9 +69,7 @@ const MilchreisStore = () => {
       <nav
         className={`${colors.navbar} p-4 text-white flex justify-between items-center shadow-lg`}
       >
-        <h1 className="text-2xl font-bold tracking-tight">
-          HOMESTEAD HERITAGE
-        </h1>
+        <h1 className="text-2xl font-bold tracking-tight">Orders platform</h1>
         <button onClick={() => setStep("cart")} className="relative p-2">
           🛒{" "}
           <span className="absolute -top-1 -right-1 bg-red-500 rounded-full text-xs px-1">
@@ -147,6 +145,38 @@ const MilchreisStore = () => {
             </div>
           </div>
         )}
+
+        {/*  */}
+        {step === "checkout" && (
+          <form onSubmit={handleCheckout()} className="space-y-4">
+            {/* Contact Section */}
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Upload Image Reference
+              </label>
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                className="block w-full text-sm text-gray-500
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-full file:border-0
+              file:text-sm file:font-semibold
+              file:bg-indigo-50 file:text-indigo-700
+              hover:file:bg-indigo-100"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition duration-200 shadow-md"
+            >
+              Submit Print Order
+            </button>
+          </form>
+        )}
+        {/*  */}
 
         {/* Checkout & Confirmation */}
         {step === "confirmation" && orderDetail && (
