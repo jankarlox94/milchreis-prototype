@@ -11,6 +11,7 @@ import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutPage from "./components/AboutPage/AboutPage.jsx";
 import ProductPage from "./components/ProductPage/ProductPage.jsx";
+import MilchreisStore from "./components/MilchreisStore/MilchreisStore.jsx";
 
 function App() {
   const bgImagen = {
@@ -32,6 +33,7 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/products" element={<ProductPage />} />
+              <Route path="/store" element={<MilchreisStore />} />
             </Routes>
 
             {/* <HeroSection />
