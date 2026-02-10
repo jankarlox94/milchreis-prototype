@@ -49,18 +49,34 @@ const MilchreisStore = () => {
 
   const handleCheckout = async () => {
     const orderData = {
-      orderNumber: Math.random().toString(36).substring(7).toUpperCase(),
+      order_number: Math.random().toString(36).substring(7).toUpperCase(),
       items: cart,
-      total: cart.reduce((sum, item) => sum + item.price * item.qty, 0),
+      total_price: cart.reduce((sum, item) => sum + item.price * item.qty, 0),
       status: "pending",
+      customer_name: "test1",
     };
 
     // Logic to connect to your NestJS/Supabase API
-    // await fetch('your-nestjs-api/orders', { method: 'POST', body: JSON.stringify(orderData) });
+    try {
+      const response = await fetch("http://[::1]:3000/orders", {
+        method: "POST",
+        body: orderData, // Do NOT set headers; the browser will set multipart/form-data automatically
+      });
 
-    setOrderDetail(orderData);
-    setCart([]);
-    setStep("confirmation");
+      if (response.ok) {
+        // setStatus("success");
+        setOrderDetail(orderData);
+        setCart([]);
+        setStep("confirmation");
+      } else {
+        // setStatus("error");
+      }
+    } catch (error) {
+      debugger;
+      console.log("Error:", error);
+      //   setStatus("error");
+    }
+    // await fetch('your-nestjs-api/orders', { method: 'POST', body: JSON.stringify(orderData) });
   };
 
   return (
@@ -151,28 +167,11 @@ const MilchreisStore = () => {
           <form onSubmit={handleCheckout()} className="space-y-4">
             {/* Contact Section */}
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Upload Image Reference
-              </label>
-              <input
-                type="file"
-                name="image"
-                accept="image/*"
-                className="block w-full text-sm text-gray-500
-              file:mr-4 file:py-2 file:px-4
-              file:rounded-full file:border-0
-              file:text-sm file:font-semibold
-              file:bg-indigo-50 file:text-indigo-700
-              hover:file:bg-indigo-100"
-              />
-            </div>
-
             <button
               type="submit"
               className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition duration-200 shadow-md"
             >
-              Submit Print Order
+              Submit Payment
             </button>
           </form>
         )}
