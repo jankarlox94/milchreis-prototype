@@ -200,7 +200,7 @@ const MilchreisStore = () => {
 
             <div className="text-left text-sm text-gray-600 space-y-2 border-t pt-4">
               <p>
-                <strong>Pickup Stand:</strong> Homestead Heritage OKC
+                <strong>Pickup Stand:</strong> MilchReis Pudding OKC
               </p>
               <p>
                 <strong>Estimated Ready:</strong> 15-20 mins
