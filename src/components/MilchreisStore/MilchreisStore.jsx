@@ -49,22 +49,27 @@ const MilchreisStore = () => {
 
   const handleCheckout = async () => {
     const orderData = {
-      order_number: Math.random().toString(36).substring(7).toUpperCase(),
       items: cart,
       total_price: cart.reduce((sum, item) => sum + item.price * item.qty, 0),
       status: "pending",
       customer_name: "test1",
+      additional_instructions: "add instr.",
     };
 
     // Logic to connect to your NestJS/Supabase API
+    debugger;
     try {
       const response = await fetch("http://[::1]:3000/orders", {
         method: "POST",
-        body: orderData, // Do NOT set headers; the browser will set multipart/form-data automatically
+        headers: {
+          "Content-Type": "application/json", // <--- THIS IS CRITICAL
+        },
+        body: JSON.stringify(orderData), // Do NOT set headers; the browser will set multipart/form-data automatically
       });
 
       if (response.ok) {
         // setStatus("success");
+        debugger;
         setOrderDetail(orderData);
         setCart([]);
         setStep("confirmation");
@@ -127,54 +132,56 @@ const MilchreisStore = () => {
 
         {/* Shopping Cart & Preview */}
         {step === "cart" && (
-          <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#F2C8B5]">
-            <h2 className="text-2xl font-bold mb-6 text-[#C88147]">
-              Your Selection
-            </h2>
-            {cart.map((item) => (
-              <div
-                key={item.id}
-                className="flex justify-between items-center border-b py-4"
-              >
-                <div>
-                  <p className="font-bold">{item.name}</p>
-                  <p className="text-xs text-gray-400">Qty: {item.qty}</p>
+          <form onSubmit={handleCheckout()} className="space-y-4">
+            <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#F2C8B5]">
+              <h2 className="text-2xl font-bold mb-6 text-[#C88147]">
+                Your Selection
+              </h2>
+              {cart.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex justify-between items-center border-b py-4"
+                >
+                  <div>
+                    <p className="font-bold">{item.name}</p>
+                    <p className="text-xs text-gray-400">Qty: {item.qty}</p>
+                  </div>
+                  <p className="font-bold text-[#d4af37]">
+                    ${(item.price * item.qty).toFixed(2)}
+                  </p>
                 </div>
-                <p className="font-bold text-[#d4af37]">
-                  ${(item.price * item.qty).toFixed(2)}
-                </p>
+              ))}
+              <div className="mt-8">
+                <div className="flex justify-between text-xl font-bold border-t-2 pt-4">
+                  <span>Total Due:</span>
+                  <span>
+                    ${cart.reduce((s, i) => s + i.price * i.qty, 0).toFixed(2)}
+                  </span>
+                </div>
+                <button
+                  onClick={() => setStep("confirmation")}
+                  className="w-full mt-6 bg-[#d4af37] text-white py-4 rounded-xl font-bold text-lg"
+                >
+                  Proceed to Payment
+                </button>
               </div>
-            ))}
-            <div className="mt-8">
-              <div className="flex justify-between text-xl font-bold border-t-2 pt-4">
-                <span>Total Due:</span>
-                <span>
-                  ${cart.reduce((s, i) => s + i.price * i.qty, 0).toFixed(2)}
-                </span>
-              </div>
-              <button
-                onClick={() => setStep("checkout")}
-                className="w-full mt-6 bg-[#d4af37] text-white py-4 rounded-xl font-bold text-lg"
-              >
-                Proceed to Payment
-              </button>
             </div>
-          </div>
+          </form>
         )}
 
-        {/*  */}
-        {step === "checkout" && (
-          <form onSubmit={handleCheckout()} className="space-y-4">
-            {/* Contact Section */}
+        {/* */}
+        {/* {step === "checkout" && (
+          <form onSubmit={handleCheckout()} className="space-y-4"> */}
+        {/* Contact Section */}
 
-            <button
+        {/* <button
               type="submit"
               className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition duration-200 shadow-md"
             >
               Submit Payment
             </button>
-          </form>
-        )}
+          </form> */}
+        {/* )} */}
         {/*  */}
 
         {/* Checkout & Confirmation */}
