@@ -51,10 +51,11 @@ const Navbar = () => {
     <nav className="w-full 2xl:py-2 px-6 md:px-12 flex justify-between items-center max-w-container-desktop mx-auto">
       <div className="flex justify-between items-center sm:px-12  2xl:py-4 px-4 ">
         {/* Logo */}
-
-        <div className="flex items-center">
-          <img src={Logo2} alt="Logo" className="w-[300px]" />
-        </div>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <div className="flex items-center">
+            <img src={Logo2} alt="Logo" className="w-[300px]" />
+          </div>
+        </Link>
 
         {/* Navegación - visible en desktop */}
         <div className="hidden md:block">
