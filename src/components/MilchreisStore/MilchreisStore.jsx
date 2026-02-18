@@ -124,21 +124,10 @@ const MilchreisStore = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F3] font-sans">
+    <div className="min-h-screen bg-peach-beige font-sans">
       {/* Navbar */}
-      <nav
-        className={`${colors.navbar} p-4 text-white flex justify-between items-center shadow-lg`}
-      >
-        <h1 className="text-2xl font-bold tracking-tight">Orders platform</h1>
-        <button onClick={() => setStep("cart")} className="relative p-2">
-          🛒{" "}
-          <span className="absolute -top-1 -right-1 bg-red-500 rounded-full text-xs px-1">
-            {cart.length}
-          </span>
-        </button>
-      </nav>
 
-      <main className=" mx-auto p-6">
+      <main className=" mx-auto">
         {/* Product Catalog */}
         {step === "catalog" && (
           <div>
@@ -163,15 +152,11 @@ const MilchreisStore = () => {
                 </span>
               )}
             </button>
-            <div className="py-16 md:py-24 px-4 text-center">
-              <h2 className="text-4xl md:text-6xl font-serif text-[#C88147] mb-4">
-                Simple. Sweet. Sublime.
-              </h2>
-              <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-10">
-                Handcrafted all-natural rice pudding. Choose your size, pick
-                your topping, and taste the nostalgia.
+            <div className="py-4 px-4 text-center">
+              <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-2">
+                Choose your size, select an option, and taste America's #1 Rice
+                Pudding.
               </p>
-
               {/* --- Size Selector --- */}
               <div className="inline-flex bg-white p-1 rounded-full shadow-lg border border-[#F2C8B5]">
                 {sizes.map((size) => (
@@ -191,7 +176,7 @@ const MilchreisStore = () => {
             </div>
 
             {/* PRoducts sect new  */}
-            <div className="max-w-7xl mx-auto px-4 pb-24">
+            <div className="max-w-7xl mx-auto px-4 pb-12">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {products.map((product) => (
                   <div
@@ -248,6 +233,11 @@ const MilchreisStore = () => {
                   </div>
                 ))}
               </div>
+              <div className="pt-6 pb-0 text-center">
+                <h2 className="text-4xl md:text-6xl font-serif text-[#C88147] ">
+                  Simple. Sweet. Sublime.
+                </h2>
+              </div>
             </div>
             {/* end new secion */}
             {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -281,51 +271,59 @@ const MilchreisStore = () => {
 
         {/* Shopping Cart & Preview */}
         {step === "cart" && (
-          <form onSubmit={handleCheckout()} className="space-y-4">
-            <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#F2C8B5]">
-              <h2 className="text-2xl font-bold mb-6 text-[#C88147]">
-                Your Selection
-              </h2>
-              {cart.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex justify-between items-center border-b py-4"
-                >
-                  <div>
-                    <p className="font-bold">{item.name}</p>
-                    <p className="text-xs text-gray-400">Qty: {item.qty}</p>
+          <div>
+            <button
+              onClick={() => setStep("catalog")}
+              className="mt-8 text-[#C88147] font-bold underline"
+            >
+              Back to Store
+            </button>
+            <form onSubmit={handleCheckout()} className="space-y-4">
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-[#F2C8B5]">
+                <h2 className="text-2xl font-bold mb-6 text-[#C88147]">
+                  Your Selection
+                </h2>
+                {cart.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex justify-between items-center border-b py-4"
+                  >
+                    <div>
+                      <p className="font-bold">{item.name}</p>
+                      <p className="text-xs text-gray-400">Qty: {item.qty}</p>
+                    </div>
+                    <p className="font-bold text-[#d4af37]">
+                      $
+                      {(
+                        calculatePrice(item.markupPercentage) * item.qty
+                      ).toFixed(2)}
+                    </p>
                   </div>
-                  <p className="font-bold text-[#d4af37]">
-                    $
-                    {(calculatePrice(item.markupPercentage) * item.qty).toFixed(
-                      2,
-                    )}
-                  </p>
+                ))}
+                <div className="mt-8">
+                  <div className="flex justify-between text-xl font-bold border-t-2 pt-4">
+                    <span>Total Due:</span>
+                    <span>
+                      $
+                      {cart
+                        .reduce(
+                          (s, i) =>
+                            s + calculatePrice(i.markupPercentage) * i.qty,
+                          0,
+                        )
+                        .toFixed(2)}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => setStep("confirmation")}
+                    className="w-full mt-6 bg-[#d4af37] text-white py-4 rounded-xl font-bold text-lg"
+                  >
+                    Proceed to Payment
+                  </button>
                 </div>
-              ))}
-              <div className="mt-8">
-                <div className="flex justify-between text-xl font-bold border-t-2 pt-4">
-                  <span>Total Due:</span>
-                  <span>
-                    $
-                    {cart
-                      .reduce(
-                        (s, i) =>
-                          s + calculatePrice(i.markupPercentage) * i.qty,
-                        0,
-                      )
-                      .toFixed(2)}
-                  </span>
-                </div>
-                <button
-                  onClick={() => setStep("confirmation")}
-                  className="w-full mt-6 bg-[#d4af37] text-white py-4 rounded-xl font-bold text-lg"
-                >
-                  Proceed to Payment
-                </button>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         )}
 
         {/* */}

@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutPage from "./components/AboutPage/AboutPage.jsx";
 import ProductPage from "./components/ProductPage/ProductPage.jsx";
 import MilchreisStore from "./components/MilchreisStore/MilchreisStore.jsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 
 function App() {
   const bgImagen = {
@@ -29,6 +30,8 @@ function App() {
             <Navbar />
           </header>
           <main>
+            <ScrollToTop />
+
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/about" element={<AboutPage />} />

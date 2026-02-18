@@ -12,13 +12,13 @@ const Navbar = () => {
   const navbarLinks = [
     {
       id: 1,
-      title: "About",
-      link: "/about",
+      title: "Products",
+      link: "/products",
     },
     {
       id: 2,
-      title: "Products",
-      link: "/products",
+      title: "About",
+      link: "/about",
     },
     {
       id: 3,

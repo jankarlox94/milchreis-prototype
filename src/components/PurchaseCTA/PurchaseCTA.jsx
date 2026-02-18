@@ -1,4 +1,5 @@
 import Bowls from "../../assets/multiple-bowls.png";
+import { Link } from "react-router-dom";
 
 const PurchaseCTA = () => {
   return (
@@ -35,8 +36,9 @@ const PurchaseCTA = () => {
             <span className="absolute -inset-1 rounded-full bg-orange-500 opacity-75 blur animate-pulse group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></span>
 
             {/* Main Button */}
+
             <button className="relative flex items-center justify-center px-10 py-5 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full text-xl md:text-2xl font-bold uppercase tracking-widest shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-200">
-              Order Your Rice Pudding Now!
+              <Link to="/products">Order Your Rice Pudding Now!</Link>
             </button>
           </div>
         </div>
