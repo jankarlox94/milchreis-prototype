@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ShoppingBag, ArrowRight, Info } from "lucide-react";
+import { ShoppingBag, ShoppingCart, ArrowRight, Info } from "lucide-react";
 import BowlsPlain from "../../assets/ricepudding-thumbnail-plain.png";
 import Bowls1 from "../../assets/ricepudding-thumbnail-1.png";
 import Bowls2 from "../../assets/ricepudding-thumbnail-2.png";
@@ -86,7 +86,10 @@ const MilchreisStore = () => {
   const handleCheckout = async () => {
     const orderData = {
       items: cart,
-      total_price: cart.reduce((sum, item) => sum + item.price * item.qty, 0),
+      total_price: cart.reduce(
+        (sum, item) => sum + calculatePrice(item.markupPercentage) * item.qty,
+        0,
+      ),
       status: "pending",
       customer_name: "test1",
       additional_instructions: "add instr.",
@@ -135,10 +138,31 @@ const MilchreisStore = () => {
         </button>
       </nav>
 
-      <main className="max-w-4xl mx-auto p-6">
+      <main className=" mx-auto p-6">
         {/* Product Catalog */}
         {step === "catalog" && (
           <div>
+            <button
+              onClick={() => setStep("cart")}
+              className="fixed bottom-6 right-6 z-50 flex items-center justify-center 
+                 w-16 h-16 rounded-full bg-blue-600 text-white shadow-lg 
+                 hover:bg-blue-700 active:scale-95 transition-all duration-200
+                 md:bottom-10 md:right-10"
+              aria-label="View Shopping Cart"
+            >
+              {/* Shopping Cart Icon */}
+              <ShoppingCart size={28} />
+
+              {/* Item Count Badge */}
+              {cart.length > 0 && (
+                <span
+                  className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center 
+                         rounded-full bg-red-500 text-xs font-bold text-white border-2 border-white"
+                >
+                  {cart.length}
+                </span>
+              )}
+            </button>
             <div className="py-16 md:py-24 px-4 text-center">
               <h2 className="text-4xl md:text-6xl font-serif text-[#C88147] mb-4">
                 Simple. Sweet. Sublime.
@@ -204,7 +228,10 @@ const MilchreisStore = () => {
 
                       {/* Actions */}
                       <div className="space-y-3">
-                        <button className="w-full py-3 bg-[#C88147] text-[#FAF9F3] font-medium rounded-xl hover:bg-[#d4af37] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                        <button
+                          onClick={() => addToCart(product)}
+                          className="w-full py-3 bg-[#C88147] text-[#FAF9F3] font-medium rounded-xl hover:bg-[#d4af37] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+                        >
                           Order Now
                           <ArrowRight size={16} />
                         </button>
@@ -269,7 +296,10 @@ const MilchreisStore = () => {
                     <p className="text-xs text-gray-400">Qty: {item.qty}</p>
                   </div>
                   <p className="font-bold text-[#d4af37]">
-                    ${(item.price * item.qty).toFixed(2)}
+                    $
+                    {(calculatePrice(item.markupPercentage) * item.qty).toFixed(
+                      2,
+                    )}
                   </p>
                 </div>
               ))}
@@ -277,7 +307,14 @@ const MilchreisStore = () => {
                 <div className="flex justify-between text-xl font-bold border-t-2 pt-4">
                   <span>Total Due:</span>
                   <span>
-                    ${cart.reduce((s, i) => s + i.price * i.qty, 0).toFixed(2)}
+                    $
+                    {cart
+                      .reduce(
+                        (s, i) =>
+                          s + calculatePrice(i.markupPercentage) * i.qty,
+                        0,
+                      )
+                      .toFixed(2)}
                   </span>
                 </div>
                 <button
