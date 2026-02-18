@@ -98,13 +98,17 @@ const MilchreisStore = () => {
     // Logic to connect to your NestJS/Supabase API
     debugger;
     try {
-      const response = await fetch("http://[::1]:3000/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json", // <--- THIS IS CRITICAL
+      // const response = await fetch("http://[::1]:3000/orders", {
+      const response = await fetch(
+        "https://milchreis-pudding-api.onrender.com/orders",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json", // <--- THIS IS CRITICAL
+          },
+          body: JSON.stringify(orderData), // Do NOT set headers; the browser will set multipart/form-data automatically
         },
-        body: JSON.stringify(orderData), // Do NOT set headers; the browser will set multipart/form-data automatically
-      });
+      );
 
       if (response.ok) {
         // setStatus("success");
